@@ -44,46 +44,7 @@
 
     <!-- recipes -->
     <div class="recipes container grey-text text-darken-1">
-        <div class="card-panel recipe white row">
-            <img src="/img/dish.png" alt="recipe thumb">
-            <div class="recipe-details">
-                <div class="recipe-title">Edame Noodles</div>
-                <div class="recipe-ingredients">Edame Beans, Noodels, Garlic oil</div>
-            </div>
-            <div class="recipe-delete">
-                <i class="material-icons">delete_outline</i>
-            </div>
-        </div>
-        <div class="card-panel recipe white row">
-            <img src="/img/dish.png" alt="recipe thumb">
-            <div class="recipe-details">
-                <div class="recipe-title">Edame Noodles</div>
-                <div class="recipe-ingredients">Edame Beans, Noodels, Garlic oil</div>
-            </div>
-            <div class="recipe-delete">
-                <i class="material-icons">delete_outline</i>
-            </div>
-        </div>
-        <div class="card-panel recipe white row">
-            <img src="/img/dish.png" alt="recipe thumb">
-            <div class="recipe-details">
-                <div class="recipe-title">Edame Noodles</div>
-                <div class="recipe-ingredients">Edame Beans, Noodels, Garlic oil</div>
-            </div>
-            <div class="recipe-delete">
-                <i class="material-icons">delete_outline</i>
-            </div>
-        </div>
-        <div class="card-panel recipe white row">
-            <img src="/img/dish.png" alt="recipe thumb">
-            <div class="recipe-details">
-                <div class="recipe-title">Edame Noodles</div>
-                <div class="recipe-ingredients">Edame Beans, Noodels, Garlic oil</div>
-            </div>
-            <div class="recipe-delete">
-                <i class="material-icons">delete_outline</i>
-            </div>
-        </div>
+
     </div>
 
     <div class="center">
@@ -98,20 +59,41 @@
             <h6>New Recipe</h6>
             <div class="divider"></div>
             <div class="input-field">
-                <input placeholder="e.g. Ninja soup" id="title" type="text" class="validate">
+                <input placeholder="e.g. Ninja soup" id="title" type="text" class="validate" required>
                 <label for="title">Recipe Title</label>
             </div>
             <div class="input-field">
-                <input placeholder="e.g. Tofu, mushroom, garlic" id="ingredients" type="text" class="validate">
+                <input placeholder="e.g. Tofu, mushroom, garlic" id="ingredients" type="text" class="validate" required>
                 <label for="ingredients">Ingredients</label>
             </div>
             <div class="input-field center">
-                <button class="btn-small">Add</button>
+                <button class="btn-small" type="submit">Add</button>
             </div>
         </form>
     </div>
 
+    <script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-firestore.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-analytics.js"></script>
+
+    <script>
+        var firebaseConfig = {
+            apiKey: "AIzaSyDnqI0GSgiGhPbTLgpcRW7yqzkoGh_3AEI",
+            authDomain: "alexisrecipe.firebaseapp.com",
+            projectId: "alexisrecipe",
+            storageBucket: "alexisrecipe.appspot.com",
+            messagingSenderId: "677499794256",
+            appId: "1:677499794256:web:6fadbf52d28cc0df3eb255",
+            measurementId: "G-PWKNSY5L20"
+        };
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+        const db = firebase.firestore();
+    </script>
+
     <script src="/js/ui.js"></script>
+    <script src="/js/db.js"></script>
     <script src="/js/app.js"></script>
 </body>
 </html>
